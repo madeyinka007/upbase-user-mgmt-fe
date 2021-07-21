@@ -8,6 +8,8 @@ import { catchError } from 'rxjs/operators';
 })
 
 export class HttpService {
+
+  // private base_url = 'http://localhost:43210/upbase/api/1.0'
   private base_url = 'https://upbase-user-mgmt.herokuapp.com/upbase/api/1.0'
 
 constructor(private httpClient: HttpClient) { }
