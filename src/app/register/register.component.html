@@ -1,0 +1,93 @@
+<div class="account-pages my-5 pt-sm-5">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+              <div class="card overflow-hidden">
+                  <div class="bg-primary bg-soft">
+                      <div class="row">
+                          <div class="col-7">
+                              <div class="text-primary p-4">
+                                  <h5 class="text-primary">Register Now For Free</h5>
+                                  <p>Sign up to become a member today.</p>
+                              </div>
+                          </div>
+                          <div class="col-5 align-self-end">
+                              <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body pt-0">
+                      <div>
+
+                              <div class="avatar-md profile-user-wid mb-4">
+                                  <span class="avatar-title rounded-circle bg-light">
+                                      <img src="assets/images/logo.svg" alt="" class="rounded-circle" height="34">
+                                  </span>
+                              </div>
+
+                      </div>
+                      <div class="p-2">
+
+                          <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+                              <div class="mb-3">
+                                  <label for="useremail" class="form-label">First Name</label>
+                                  <input type="text" class="form-control" formControlName="firstname" [ngClass]="{'is-invalid' : !value.firstname.valid && (value.firstname.touched)}" placeholder="First Name" required>
+                                  <div class="invalid-feedback">
+                                      Please provide user first name
+                                  </div>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="useremail" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastname" [ngClass]="{'is-invalid' : !value.lastname.valid && (value.lastname.touched)}" placeholder="Last Name" required>
+                                <div class="invalid-feedback">
+                                    Please provide user last name
+                                </div>
+                            </div>
+
+                              <div class="mb-3">
+                                  <label for="username" class="form-label">Username</label>
+                                  <input type="text" class="form-control" formControlName="username" [ngClass]="{'is-invalid' : !value.username.valid && (value.username.touched)}" placeholder="Enter username" required>
+                                  <div class="invalid-feedback">
+                                      Please provide display name
+                                  </div>
+                              </div>
+
+                              <div class="mb-3">
+                                  <label for="userpassword" class="form-label">Password</label>
+                                  <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid' : !value.password.valid && (value.password.touched)}" placeholder="Enter password" required>
+                                  <div class="invalid-feedback">
+                                      Please Enter Password
+                                  </div>
+                              </div>
+
+                              <div class="mt-4 d-grid mb-3">
+                                  <button class="btn btn-primary waves-effect waves-light" type="submit">Register</button>
+                              </div>
+                              <div *ngIf="_status == true" class="alert alert-success alert-success show" role="alert">
+                                <i class="mdi mdi-check-all me-2"></i>
+                                {{_msg}}
+                              </div>
+                              <div *ngIf="_status == false" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="mdi mdi-block-helper me-2"></i>
+                                {{_msg}}
+                              </div>
+                              <div class="mt-4 text-center">
+                                  <p class="mb-0">By registering you agree to our <a href="#" class="text-primary">Terms of Use</a></p>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="mt-5 text-center">
+
+                  <div>
+                      <p>Already have an account ? <a routerLink="/signin" class="fw-medium text-primary"> Login</a> </p>
+                      <p>© 2021</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
