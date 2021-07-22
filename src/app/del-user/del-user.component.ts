@@ -27,10 +27,10 @@ export class DelUserComponent implements OnInit {
     })
   }
 
-  delUser(id:string){
-    this.httpService.get(this.url+id).subscribe(
+  delUser(Id:string){
+    console.log(Id)
+    this.httpService.get(this.url+Id).subscribe(
       (data) => {
-        console.log(data)
         if (data.error == false) {
           this.router.navigate(['signup'])
         }
