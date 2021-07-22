@@ -22,13 +22,14 @@ export class DelUserComponent implements OnInit {
     this._router.paramMap.subscribe(params => {
       const userId = params.get('id')
       if (userId) {
+        console.log(userId)
         this.id = userId
       }
     })
   }
 
   delUser(Id:string){
-    console.log(Id)
+    //console.log(Id)
     this.httpService.get(this.url+Id).subscribe(
       (data) => {
         if (data.error == false) {
